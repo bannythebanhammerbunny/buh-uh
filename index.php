@@ -14,13 +14,13 @@
             <h1 class="page_title">noob pro hacker 2010 video compilamtion</h1>
         </a>
         <a href="" style="float: left;">
-            <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">HOURS</p>
+            <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">music</p>
         </a>
         <a href="" style="float: left;">
-            <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">PRODUCTS</p>
+            <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">books</p>
         </a>
         <a href="" style="float: left;">
-            <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">LOGOUT</p>
+            <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">movies</p>
         </a>
         <br style="margin-bottom: 10px; clear: both;">
         <br style="margin-bottom: 10px; clear: both;">
