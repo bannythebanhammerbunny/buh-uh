@@ -13,13 +13,16 @@
             <img class="header_logo" src="../images/logo-cutout.png" alt="Logo">
             <h1 class="page_title">noob pro hacker 2010 video compilamtion</h1>
         </a>
-        <a href="" style="float: left;">
+        <a href="index.php" style="float: left;">
+            <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">home</p>
+        </a>
+        <a href="musiclist.php" style="float: left;">
             <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">music</p>
         </a>
-        <a href="" style="float: left;">
+        <a href="booklist.php" style="float: left;">
             <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">books</p>
         </a>
-        <a href="" style="float: left;">
+        <a href="movielist.php" style="float: left;">
             <p style="color: #FFFFFF; float: left; margin-left: 5vw; font-size: 35px;">movies</p>
         </a>
         <br style="margin-bottom: 10px; clear: both;">
