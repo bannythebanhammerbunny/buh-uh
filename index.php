@@ -10,7 +10,6 @@
     <header>
         <br style="margin-bottom: 10px;">
         <a href="index.php" style="float: left;">
-            <img class="header_logo" src="../images/logo-cutout.png" alt="Logo">
             <h1 class="page_title">noob pro hacker 2010 video compilamtion</h1>
         </a>
         <a href="index.php" style="float: left;">
