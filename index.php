@@ -29,7 +29,7 @@
     </header>
     <main>
     <a href="movielist.php"><img src="img/2Q.png" alt="this doesnt usually happem"></a>
-    <a href="musiclist.php"><img src="img/crock.png" alt="image not loading? imagine"></a>
+    <a href="musiclist.php"><img src="img/crock.jpg" alt="image not loading? imagine"></a>
     <a href="movielist.php"><img src="img/images.jpg" alt="guys i need a creative joke for a placeholder, what do i do"></a>
 
 </main>
