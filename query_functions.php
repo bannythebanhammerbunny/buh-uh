@@ -60,6 +60,24 @@ function get_book_by_id($id)
 	mysqli_free_result($result);
 	return $p; // returns an assoc. array
 }
+
+function update_product_by_id($id, $brand, $name, $img)
+{
+	global $db;
+
+	$sql = "UPDATE `products` SET `brand`='$brand',`name`='$name',`img`='$img' WHERE `id`='$id';";
+
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
 // // 
 // // Admins
 // // 
