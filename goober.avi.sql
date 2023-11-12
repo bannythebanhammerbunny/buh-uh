@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 05, 2023 at 01:12 AM
+-- Generation Time: Nov 12, 2023 at 03:15 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `movie` (
   `name` text NOT NULL,
   `author` text NOT NULL,
   `length` int NOT NULL,
-  `funny` tinyint(1) NOT NULL,
+  `rating` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `movie` (
 -- Dumping data for table `movie`
 --
 
-INSERT INTO `movie` (`id`, `name`, `author`, `length`, `funny`) VALUES
+INSERT INTO `movie` (`id`, `name`, `author`, `length`, `rating`) VALUES
 (1, 'morbius', 'matt sazama', 6240, 6),
 (2, 'angry birb', 'jon vitti', 5820, 5);
 
@@ -79,8 +79,8 @@ CREATE TABLE IF NOT EXISTS `ok` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `author` varchar(100) NOT NULL,
-  `album` text NOT NULL,
-  `comment` text NOT NULL,
+  `length` int NOT NULL,
+  `rating` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 
@@ -88,9 +88,9 @@ CREATE TABLE IF NOT EXISTS `ok` (
 -- Dumping data for table `ok`
 --
 
-INSERT INTO `ok` (`id`, `name`, `author`, `album`, `comment`) VALUES
-(1, 'an eternity more scarlet than red', 'zun', 'no', 'loops very well. in the context of the origin, you wont be hearing it for long'),
-(9, 'Locked Girl ~ The girls Sealed Room', 'drunk guy', 'retrospective 53 minutes', 'dark, mysterious. the song is short-lived though');
+INSERT INTO `ok` (`id`, `name`, `author`, `length`, `rating`) VALUES
+(1, 'an eternity more scarlet than red', 'zun', 0, 0),
+(9, 'Locked Girl ~ The girls Sealed Room', 'drunk guy', 0, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
