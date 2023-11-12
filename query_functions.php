@@ -50,10 +50,10 @@ function insert_movie($id, $name, $author, $funni, $lengh) {
 	}
 }
 
-function get_book_by_id($id)
+function get_movie_by_id($id)
 {
 	global $db;
-	$sql = "SELECT * FROM `books` WHERE `id` = $id";
+	$sql = "SELECT * FROM `movie` WHERE `id` = $id";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	$p = mysqli_fetch_assoc($result);
@@ -61,23 +61,70 @@ function get_book_by_id($id)
 	return $p; // returns an assoc. array
 }
 
-function update_product_by_id($id, $brand, $name, $img)
-{
-	global $db;
+// function update_music_by_id($id, $name, $lengh, $author, $rating)
+// {
+// 	global $db;
 
-	$sql = "UPDATE `products` SET `brand`='$brand',`name`='$name',`img`='$img' WHERE `id`='$id';";
+// 	$sql = "UPDATE `products` SET `brand`='$brand',`name`='$name',`img`='$img' WHERE `id`='$id';";
 
-	$result = mysqli_query($db, $sql);
-	// For UPDATE statements, $result is true/false
-	if ($result) {
-		return true;
-	} else {
-		// UPDATE failed
-		echo mysqli_error($db);
-		db_disconnect($db);
-		exit;
-	}
-}
+// 	$result = mysqli_query($db, $sql);
+// 	// For UPDATE statements, $result is true/false
+// 	if ($result) {
+// 		return true;
+// 	} else {
+// 		// UPDATE failed
+// 		echo mysqli_error($db);
+// 		db_disconnect($db);
+// 		exit;
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // 
 // // Admins
 // // 

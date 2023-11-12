@@ -41,7 +41,8 @@ $movies = getMovie();
                 <th style="border: 1px solid #202020; text-align: center; padding: 8px;">Name</th>
                 <th style="border: 1px solid #202020; text-align: center; padding: 8px;">Author</th>
                 <th style="border: 1px solid #202020; text-align: center; padding: 8px;">length</th>
-                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">funny</th>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">rating</th>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">edit data</th>
             </tr>
             <?php while ($movie = mysqli_fetch_assoc($movies)) { ?>
                 <tr>
@@ -49,7 +50,8 @@ $movies = getMovie();
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['name']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['author']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['length']; ?></td>
-                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['funny']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['rating']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><a href = "editData.php?id=<?php echo $movie['id']."_2"; ?>">edit this row</a></td>
             <?php } ?>
         </table>
     </main>

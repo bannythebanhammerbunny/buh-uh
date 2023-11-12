@@ -28,6 +28,7 @@
         <br style="margin-bottom: 10px; clear: both;">
     </header>
     <main>
+    <a href ="editData.php"><p>nacho taco chimichanga</p></a>
     <a href="movielist.php"><img src="img/2Q.png" alt="this doesnt usually happem"></a>
     <a href="musiclist.php"><img src="img/crock.jpg" alt="image not loading? imagine"></a>
     <a href="movielist.php"><img src="img/images.jpg" alt="guys i need a creative joke for a placeholder, what do i do"></a>
