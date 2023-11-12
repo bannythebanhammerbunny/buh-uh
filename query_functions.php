@@ -29,6 +29,37 @@ function getMovie()
 	return $result; // returns an assoc. array
 	
 }
+
+
+
+//experimental functions that we might use later
+
+function insert_movie($id, $name, $author, $funni, $lengh) {
+	global $db;
+
+	$sql = "INSERT INTO `products`(`id`, `name`, `author`, 'funni', lengh) VALUES ('$id','$name','$author', '$funni', '$lengh')";
+
+	$result = mysqli_query($db, $sql);
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+
+function get_book_by_id($id)
+{
+	global $db;
+	$sql = "SELECT * FROM `books` WHERE `id` = $id";
+	$result = mysqli_query($db, $sql);
+	confirm_result_set($result);
+	$p = mysqli_fetch_assoc($result);
+	mysqli_free_result($result);
+	return $p; // returns an assoc. array
+}
 // // 
 // // Admins
 // // 
@@ -77,16 +108,6 @@ function getMovie()
 // 	return $result; // returns an assoc. array
 // }
 
-// function get_product_by_id($id)
-// {
-// 	global $db;
-// 	$sql = "SELECT * FROM `products` WHERE `id` = $id";
-// 	$result = mysqli_query($db, $sql);
-// 	confirm_result_set($result);
-// 	$p = mysqli_fetch_assoc($result);
-// 	mysqli_free_result($result);
-// 	return $p; // returns an assoc. array
-// }
 
 // function update_product_by_id($id, $brand, $name, $img)
 // {
