@@ -7,13 +7,13 @@
 
 
     if ($table == "1") {
-
+        $data = get_music_by_id($data_id);
     }
     elseif ($table == "2") {  //movie
         $data = get_movie_by_id($data_id);
     }
-    elseif ($table == "3") {
-
+    elseif ($table == "0") {
+        $data = get_book_by_id($data_id);
     }
 
 
@@ -22,12 +22,13 @@
         // if cancel button was click
     if (isset($_POST["cancel"])) 
         {if ($table == "1") {
-        
+        header("Location: musiclist.php");
         }
         elseif ($table == "2") {  //movie
         header("Location: movielist.php");
         }
         elseif ($table == "3") {
+        header("Location: booklist.php");
 
         }
     }

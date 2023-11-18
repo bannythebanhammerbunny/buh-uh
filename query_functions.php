@@ -61,6 +61,28 @@ function get_movie_by_id($id)
 	return $p; // returns an assoc. array
 }
 
+function get_music_by_id($id)
+{
+	global $db;
+	$sql = "SELECT * FROM `music` WHERE `id` = $id";
+	$result = mysqli_query($db, $sql);
+	confirm_result_set($result);
+	$p = mysqli_fetch_assoc($result);
+	mysqli_free_result($result);
+	return $p; // returns an assoc. array
+}
+
+function get_book_by_id($id)
+{
+	global $db;
+	$sql = "SELECT * FROM `book` WHERE `id` = $id";
+	$result = mysqli_query($db, $sql);
+	confirm_result_set($result);
+	$p = mysqli_fetch_assoc($result);
+	mysqli_free_result($result);
+	return $p; // returns an assoc. array
+}
+
 // function update_music_by_id($id, $name, $lengh, $author, $rating)
 // {
 // 	global $db;
