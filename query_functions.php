@@ -5,6 +5,9 @@ function getMusic()
 
 	$sql = "SELECT * FROM `ok` ";
 	$result = mysqli_query($db, $sql);
+	if (! $result){
+		exit("messeg".mysqli_error($db));
+	}
 	confirm_result_set($result);
 	return $result; // returns an assoc. array
 
@@ -15,9 +18,11 @@ function getBook()
 
 	$sql = "SELECT * FROM `book` ";
 	$result = mysqli_query($db, $sql);
+	if (! $result){
+		exit("messeg".mysqli_error($db));
+	}
 	confirm_result_set($result);
 	return $result; // returns an assoc. array
-	
 }
 function getMovie()
 {
@@ -64,7 +69,7 @@ function get_movie_by_id($id)
 function get_music_by_id($id)
 {
 	global $db;
-	$sql = "SELECT * FROM `music` WHERE `id` = $id";
+	$sql = "SELECT * FROM `ok` WHERE `id` = $id";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	$p = mysqli_fetch_assoc($result);
@@ -83,23 +88,23 @@ function get_book_by_id($id)
 	return $p; // returns an assoc. array
 }
 
-// function update_music_by_id($id, $name, $lengh, $author, $rating)
-// {
-// 	global $db;
+function update_music_by_id($id, $name, $length, $author, $rating)
+{
+	global $db;
 
-// 	$sql = "UPDATE `products` SET `brand`='$brand',`name`='$name',`img`='$img' WHERE `id`='$id';";
+	$sql = "UPDATE `ok` SET `name`='$name',`length`='$length', `author`='$author',`rating`='$rating' WHERE `id`='$id';";
 
-// 	$result = mysqli_query($db, $sql);
-// 	// For UPDATE statements, $result is true/false
-// 	if ($result) {
-// 		return true;
-// 	} else {
-// 		// UPDATE failed
-// 		echo mysqli_error($db);
-// 		db_disconnect($db);
-// 		exit;
-// 	}
-// }
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
 
 
 

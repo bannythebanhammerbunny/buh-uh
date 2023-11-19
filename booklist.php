@@ -1,6 +1,6 @@
 <?php
 require_once("initialize.php");
-$movies = getMovie();
+$books = getBook();
 ?>
 <!DOCTYPE html>
 <html lang="en">

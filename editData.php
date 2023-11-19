@@ -20,19 +20,47 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // if cancel button was click
-    if (isset($_POST["cancel"])) 
-        {if ($table == "1") {
-        header("Location: musiclist.php");
-        }
-        elseif ($table == "2") {  //movie
-        header("Location: movielist.php");
-        }
-        elseif ($table == "0") {
-        header("Location: booklist.php");
-
-        }
-    }
     
+        if (isset($_POST["cancel"])) 
+            {if ($table == "1") {
+            header("Location: musiclist.php");
+            }
+            elseif ($table == "2") {  //movie
+            header("Location: movielist.php");
+            }
+            elseif ($table == "0") {
+            header("Location: booklist.php");
+
+            }
+        }
+    
+        if (isset($_POST["submit"])) 
+            {
+                if ($table == "1") {
+                    $name=$_POST['name'];
+                    $author=$_POST['author'];
+                    $length=$_POST['length'];
+                    $rating=$_POST['rating'];
+                    update_music_by_id($id, $name, $length, $author, $rating);
+                    header("Location: musiclist.php");
+                }
+                elseif ($table == "2") {  //movie
+                    $name=$_POST['name'];
+                    $author=$_POST['author'];
+                    $length=$_POST['length'];
+                    $rating=$_POST['rating'];
+                    update_movie_by_id($id, $name, $length, $author, $rating);
+                    header("Location: movielist.php");
+                }
+                elseif ($table == "0") {
+                    $name=$_POST['name'];
+                    $author=$_POST['author'];
+                    $length=$_POST['length'];
+                    $rating=$_POST['rating'];
+                    update_book_by_id($id, $name, $length, $author, $rating);
+                    header("Location: booklist.php");
+                }
+        }
     }
 ?>
 <!DOCTYPE html>
