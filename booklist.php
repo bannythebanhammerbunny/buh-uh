@@ -1,3 +1,7 @@
+<?php
+require_once("initialize.php");
+$movies = getMovie();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +32,26 @@
         <br style="margin-bottom: 10px; clear: both;">
     </header>
     <main>
+        
+    <table style="border-collapse: collapse; width: 100%;">
+            <tr>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">id</th>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">Name</th>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">Author</th>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">length</th>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">rating</th>
+                <th style="border: 1px solid #202020; text-align: center; padding: 8px;">edit data</th>
+            </tr>
+            <?php while ($book = mysqli_fetch_assoc($books)) { ?>
+                <tr>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['id']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['name']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['author']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['length']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['rating']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><a href = "editData.php?id=<?php echo $book['id']."_0"; ?>">edit this row</a></td>
+            <?php } ?>
+        </table>
     </main>
     <footer>
 

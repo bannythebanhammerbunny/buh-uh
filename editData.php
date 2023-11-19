@@ -27,7 +27,7 @@
         elseif ($table == "2") {  //movie
         header("Location: movielist.php");
         }
-        elseif ($table == "3") {
+        elseif ($table == "0") {
         header("Location: booklist.php");
 
         }
