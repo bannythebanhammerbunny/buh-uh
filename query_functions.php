@@ -146,45 +146,6 @@ function update_book_by_id($id, $name, $length, $author, $rating)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // 
 // // Admins
 // // 
