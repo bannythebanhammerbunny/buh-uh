@@ -107,8 +107,41 @@ function update_music_by_id($id, $name, $length, $author, $rating)
 }
 
 
+function update_movie_by_id($id, $name, $length, $author, $rating)
+{
+	global $db;
 
+	$sql = "UPDATE `movie` SET `name`='$name',`length`='$length', `author`='$author',`rating`='$rating' WHERE `id`='$id';";
 
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+
+function update_book_by_id($id, $name, $length, $author, $rating)
+{
+	global $db;
+
+	$sql = "UPDATE `book` SET `name`='$name',`length`='$length', `author`='$author',`rating`='$rating' WHERE `id`='$id';";
+
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
 
 
 
