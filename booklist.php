@@ -50,8 +50,10 @@ $books = getBook();
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['length']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['rating']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><a href = "editData.php?id=<?php echo $book['id']."_0"; ?>">edit this row</a></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px; width:50px"><a href = "deleteData.php?id=<?php echo $book['id']."_0"; ?>"><img src="img/evilCarWash.png" style="width: 100%"></a></td>
             <?php } ?>
         </table>
+        <a href="insertData.php?id=0"><img src="img/walterBlanco.jpg" alt="water write"></a>
     </main>
     <footer>
 

@@ -143,9 +143,40 @@ function update_book_by_id($id, $name, $length, $author, $rating)
 	}
 }
 
+function insert_book($name, $length, $author, $rating)
+{
+	global $db;
 
+	$sql = "INSERT INTO `book`(`name`, `author`, `length`, `rating`) VALUES ('$name','$author','$length','$rating')";
+	
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
 
+function delete_book_by_id($id)
+{
+	global $db;
 
+	$sql = "DELETE FROM `book` WHERE id = $id";
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
 // // 
 // // Admins
 // // 
