@@ -39,21 +39,6 @@ function getMovie()
 
 //experimental functions that we might use later
 
-function insert_movie($id, $name, $author, $funni, $lengh) {
-	global $db;
-
-	$sql = "INSERT INTO `products`(`id`, `name`, `author`, 'funni', lengh) VALUES ('$id','$name','$author', '$funni', '$lengh')";
-
-	$result = mysqli_query($db, $sql);
-	if ($result) {
-		return true;
-	} else {
-		// UPDATE failed
-		echo mysqli_error($db);
-		db_disconnect($db);
-		exit;
-	}
-}
 
 function get_movie_by_id($id)
 {
@@ -161,11 +146,79 @@ function insert_book($name, $length, $author, $rating)
 	}
 }
 
+function insert_music($name, $length, $author, $rating)
+{
+	global $db;
+
+	$sql = "INSERT INTO `ok`(`name`, `author`, `length`, `rating`) VALUES ('$name','$author','$length','$rating')";
+	
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+
+function insert_movie($name, $length, $author, $rating)
+{
+	global $db;
+
+	$sql = "INSERT INTO `movie`(`name`, `author`, `length`, `rating`) VALUES ('$name','$author','$length','$rating')";
+	
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+
 function delete_book_by_id($id)
 {
 	global $db;
 
 	$sql = "DELETE FROM `book` WHERE id = $id";
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+function delete_music_by_id($id)
+{
+	global $db;
+
+	$sql = "DELETE FROM `ok` WHERE id = $id";
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+function delete_movie_by_id($id)
+{
+	global $db;
+
+	$sql = "DELETE FROM `movie` WHERE id = $id";
 	$result = mysqli_query($db, $sql);
 	// For UPDATE statements, $result is true/false
 	if ($result) {

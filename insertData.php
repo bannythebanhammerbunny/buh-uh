@@ -26,7 +26,7 @@
                     $author=$_POST['author'];
                     $length=$_POST['length'];
                     $rating=$_POST['rating'];
-                    // inset_music($id, $name, $length, $author, $rating);
+                    insert_music($name, $length, $author, $rating);
                     header("Location: musiclist.php");
                 }
                 elseif ($table == "2") {  //movie
@@ -34,7 +34,7 @@
                     $author=$_POST['author'];
                     $length=$_POST['length'];
                     $rating=$_POST['rating'];
-                    // insert_movie($name, $length, $author, $rating);
+                    insert_movie($name, $length, $author, $rating);
                     header("Location: movielist.php");
                 }
                 elseif ($table == "0") {

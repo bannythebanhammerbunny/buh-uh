@@ -38,11 +38,11 @@
         if (isset($_POST["submit"])) 
             {
                 if ($table == "1") {
-                    // update_music_by_id($id, $name, $length, $author, $rating);
+                    delete_music_by_id($data_id);
                     header("Location: musiclist.php");
                 }
                 elseif ($table == "2") {  //movie
-                    // update_movie_by_id($id, $name, $length, $author, $rating);
+                    delete_movie_by_id($data_id);
                     header("Location: movielist.php");
                 }
                 elseif ($table == "0") {
