@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 12, 2023 at 03:15 AM
+-- Generation Time: Dec 03, 2023 at 02:20 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -35,14 +35,15 @@ CREATE TABLE IF NOT EXISTS `book` (
   `length` int NOT NULL,
   `rating` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `book`
 --
 
 INSERT INTO `book` (`id`, `name`, `author`, `length`, `rating`) VALUES
-(1, 'diariaryie of a wimpy gregory', 'kineff jinney', 224, 4);
+(1, 'diariaryie of a wimpy gregory', 'kineff jinney', 2, 4),
+(2, 'the art of war', 'suntzu', 31, 0);
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `movie` (
 --
 
 INSERT INTO `movie` (`id`, `name`, `author`, `length`, `rating`) VALUES
-(1, 'morbius', 'matt sazama', 6240, 6),
+(1, 'morbius', 'matt sazama', 6240, 8),
 (2, 'angry birb', 'jon vitti', 5820, 5);
 
 -- --------------------------------------------------------
@@ -77,20 +78,28 @@ INSERT INTO `movie` (`id`, `name`, `author`, `length`, `rating`) VALUES
 DROP TABLE IF EXISTS `ok`;
 CREATE TABLE IF NOT EXISTS `ok` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `author` varchar(100) NOT NULL,
+  `name` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `author` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `length` int NOT NULL,
   `rating` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `ok`
 --
 
 INSERT INTO `ok` (`id`, `name`, `author`, `length`, `rating`) VALUES
-(1, 'an eternity more scarlet than red', 'zun', 0, 0),
-(9, 'Locked Girl ~ The girls Sealed Room', 'drunk guy', 0, 0);
+(1, 'an eternity more scarlet than red', 'zun', 31, 3),
+(2, 'A soul as Red as a Ground cherry', 'zun', 151, 4),
+(3, 'Apparitions Stalk the Night', 'zun', 117, 4),
+(4, 'Lunate Elf', 'zun', 177, 3),
+(5, 'Tomboyish Girl in Love', 'zun', 183, 6),
+(6, 'Shanghai Teahouse ~ Chinese Tea', 'zun', 243, 4),
+(7, 'Shanghai Alice of Meiji 17', 'zun', 196, 7),
+(8, 'voile', 'zun', 0, 9),
+(9, 'B4', 'zun', 0, 6),
+(10, 'S5', 'zun', 0, 8);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
