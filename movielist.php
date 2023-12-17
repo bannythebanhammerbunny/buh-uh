@@ -48,7 +48,7 @@ $movies = getMovie();
                 <tr>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['id']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['name']; ?></td>
-                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['author']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['a_name']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['length']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $movie['rating']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><a href = "editData.php?id=<?php echo $movie['id']."_2"; ?>">edit this row</a></td>

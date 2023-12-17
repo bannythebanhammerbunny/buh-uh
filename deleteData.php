@@ -103,7 +103,7 @@
                 <tr>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $data['id']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $data['name']; ?></td>
-                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $data['author']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $data['a_name']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $data['length']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $data['rating']; ?></td>
                 </tr>

@@ -46,7 +46,7 @@ $musics = getMusic();
                 <tr>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $music['id']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $music['name']; ?></td>
-                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $music['author']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $music['a_name']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $music['length']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $music['rating']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><a href = "editData.php?id=<?php echo $music['id']."_1"; ?>">edit this row</a></td>

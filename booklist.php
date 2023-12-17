@@ -46,7 +46,7 @@ $books = getBook();
                 <tr>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['id']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['name']; ?></td>
-                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['author']; ?></td>
+                    <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['a_name']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['length']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><?php echo $book['rating']; ?></td>
                     <td style="border: 1px solid #202020; text-align: center; padding: 8px;"><a href = "editData.php?id=<?php echo $book['id']."_0"; ?>">edit this row</a></td>

@@ -1,7 +1,7 @@
 <?php require_once('initialize.php');
     $id = $_GET["id"];
     $tempArray = explode("_", $id);
-    
+    $authors = getAuthor();
     $data_id = $tempArray[0];
     $table = $tempArray[1];
 
@@ -101,7 +101,11 @@
         <form action="" method="POST">
             name: <input type="text" name="name" value="<?php echo $data['name']; ?>">
             <br>
-            author: <input type="text" name="author" value="<?php echo $data['author']; ?>">
+            author: <select name="author" id="author">
+            <?php while ($author = mysqli_fetch_assoc($authors)) { ?>
+                <option value="<?php echo $author['id']; ?>"><?php echo $author['name']; ?></option>
+                <?php } ?>
+            </select>
             <br>
             length: <input type="text" name="length" value="<?php echo $data['length']; ?>">
             <br>

@@ -3,7 +3,7 @@ function getMusic()
 {
 	global $db;
 
-	$sql = "SELECT * FROM `ok` ";
+	$sql = "SELECT ok.`id`,  ok.`name`,  `author`,  `length`,  `rating`, authors.`id` AS a_id, authors.`name` AS a_name FROM `ok`, `authors` WHERE ok.author = authors.id;";
 	$result = mysqli_query($db, $sql);
 	if (! $result){
 		exit("messeg".mysqli_error($db));
@@ -16,7 +16,7 @@ function getBook()
 {
 	global $db;
 
-	$sql = "SELECT * FROM `book` ";
+	$sql = "SELECT book.`id`,  book.`name`,  `author`,  `length`,  `rating`, authors.`id` AS a_id, authors.`name` AS a_name FROM `book`, `authors` WHERE book.author = authors.id;";
 	$result = mysqli_query($db, $sql);
 	if (! $result){
 		exit("messeg".mysqli_error($db));
@@ -28,7 +28,25 @@ function getMovie()
 {
 	global $db;
 
-	$sql = "SELECT * FROM `movie` ";
+	$sql = "SELECT movie.`id`,  movie.`name`,  `author`,  `length`,  `rating`, authors.`id` AS a_id, authors.`name` AS a_name FROM `movie`, `authors` WHERE movie.author = authors.id;";
+	$result = mysqli_query($db, $sql);
+	confirm_result_set($result);
+	return $result; // returns an assoc. array
+	
+}
+function getTable($table)
+{
+	global $db;
+	$sql = "SELECT * FROM $table";
+	$result = mysqli_query($db, $sql);
+	confirm_result_set($result);
+	return $result; // returns an assoc. array
+	
+}
+function getAuthor()
+{
+	global $db;
+	$sql = "SELECT * FROM `authors`";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	return $result; // returns an assoc. array
@@ -43,7 +61,7 @@ function getMovie()
 function get_movie_by_id($id)
 {
 	global $db;
-	$sql = "SELECT * FROM `movie` WHERE `id` = $id";
+	$sql = "SELECT movie.`id`,  movie.`name`,  `author`,  `length`,  `rating`, authors.`id` AS a_id, authors.`name` AS a_name FROM `movie`, `authors` WHERE movie.id = $id and movie.author = authors.id;";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	$p = mysqli_fetch_assoc($result);
@@ -54,7 +72,7 @@ function get_movie_by_id($id)
 function get_music_by_id($id)
 {
 	global $db;
-	$sql = "SELECT * FROM `ok` WHERE `id` = $id";
+	$sql = "SELECT ok.`id`,  ok.`name`,  `author`,  `length`,  `rating`, authors.`id` AS a_id, authors.`name` AS a_name FROM `ok`, `authors` WHERE ok.id = $id and ok.author = authors.id;";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	$p = mysqli_fetch_assoc($result);
@@ -65,14 +83,23 @@ function get_music_by_id($id)
 function get_book_by_id($id)
 {
 	global $db;
-	$sql = "SELECT * FROM `book` WHERE `id` = $id";
+	$sql = "SELECT book.`id`,  book.`name`,  `author`,  `length`,  `rating`, authors.`id` AS a_id, authors.`name` AS a_name FROM `book`, `authors` WHERE book.id = $id and book.author = authors.id;";
 	$result = mysqli_query($db, $sql);
 	confirm_result_set($result);
 	$p = mysqli_fetch_assoc($result);
 	mysqli_free_result($result);
 	return $p; // returns an assoc. array
 }
-
+function get_by_id($table, $id)
+{
+	global $db;
+	$sql = "SELECT * FROM $table WHERE `id` = $id";
+	$result = mysqli_query($db, $sql);
+	confirm_result_set($result);
+	$p = mysqli_fetch_assoc($result);
+	mysqli_free_result($result);
+	return $p; // returns an assoc. array
+}
 function update_music_by_id($id, $name, $length, $author, $rating)
 {
 	global $db;
@@ -116,6 +143,41 @@ function update_book_by_id($id, $name, $length, $author, $rating)
 
 	$sql = "UPDATE `book` SET `name`='$name',`length`='$length', `author`='$author',`rating`='$rating' WHERE `id`='$id';";
 
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+
+function update_by_id($table, $id, $name, $length, $author, $rating)
+{
+	global $db;
+
+	$sql = "UPDATE $table SET `name`='$name',`length`='$length', `author`='$author',`rating`='$rating' WHERE `id`='$id';";
+
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+function insert_table($table, $name, $length, $author, $rating)
+{
+	global $db;
+
+	$sql = "INSERT INTO $table(`name`, `author`, `length`, `rating`) VALUES ('$name','$author','$length','$rating')";
+	
 	$result = mysqli_query($db, $sql);
 	// For UPDATE statements, $result is true/false
 	if ($result) {
@@ -219,6 +281,22 @@ function delete_movie_by_id($id)
 	global $db;
 
 	$sql = "DELETE FROM `movie` WHERE id = $id";
+	$result = mysqli_query($db, $sql);
+	// For UPDATE statements, $result is true/false
+	if ($result) {
+		return true;
+	} else {
+		// UPDATE failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	}
+}
+function delete_by_id($table, $id)
+{
+	global $db;
+
+	$sql = "DELETE FROM $table WHERE id = $id";
 	$result = mysqli_query($db, $sql);
 	// For UPDATE statements, $result is true/false
 	if ($result) {
